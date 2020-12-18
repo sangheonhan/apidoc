@@ -1,3 +1,3 @@
 #! /bin/bash
 
-docker run --rm -u `id -u` -v "$PWD":/usr/src/app/ apidoc:latest $@
+docker run --rm --user `id -u`:`id -g` -v "$PWD":/usr/src/app/ -w /usr/src/app/ sangheon/apidoc:latest $@
